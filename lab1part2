@@ -1,0 +1,15 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY Lab1Part2 IS
+	PORT (I0: IN STD_LOGIC;
+			I1: IN STD_LOGIC;
+			A: IN STD_LOGIC;
+			Q: OUT STD_LOGIC);
+END Lab1Part2;
+
+ARCHITECTURE Behavior OF Lab1Part2 IS
+BEGIN 
+	Q <= (I0 NAND A)NAND((A NAND A) NAND I1);
+
+END Behavior;
