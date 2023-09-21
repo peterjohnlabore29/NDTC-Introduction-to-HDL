@@ -1,0 +1,30 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY Lab1Activity3 IS
+
+	PORT (
+			S0: STD_LOGIC;
+			S1: STD_LOGIC;
+			U : STD_LOGIC;
+			V: STD_LOGIC;
+			W: STD_LOGIC;
+			LEDR: OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
+			M : OUT STD_LOGIC);
+			
+	END Lab1Activity3;
+			
+	ARCHITECTURE Behavior OF Lab1Activity3 IS
+	BEGIN
+			
+			LEDR(4) <=S1;
+			LEDR(3) <=S0;
+			LEDR(2) <=U;
+			LEDR(1) <=V;
+			LEDR(0) <=W;
+			
+			
+			M <= (NOT S1 AND ((NOT S0 AND U) OR (S0 AND V))) OR ( S1 AND W);
+		
+			
+	END Behavior;
